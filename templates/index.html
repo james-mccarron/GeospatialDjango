@@ -1,0 +1,79 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Include Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- Include your main.js file -->
+    <script src="{% static 'mapproject/dist/bundle.js' %}" type="module"></script>
+  
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <title>HALF A WORLD AWAY OUT NOW</title>
+    <link rel="stylesheet" type="text/css" href="static/mapproject/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="https://kit.fontawesome.com/afc995c48e.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+        <a class = "logo" href = "https://staticpoint.rocks/">
+            <img src = "static/mapproject/logo-banner.png" alt = "Static Point" width="150" height="100">
+        </a>
+    </header>
+    <div id="globe-container" style="flex-grow: 1; /* Take up remaining space */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center content vertically and horizontally */
+    overflow: hidden;"></div>
+    <div class="controls">
+        <p>Find out what people are listening to half a world away from you</p>
+        <form class="form-inline my-2 my-lg-0" method="POST">
+          {% csrf_token %}
+          <input type="text" name="citysearch" placeholder="Enter city name">
+          <button id="findAntipode" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+    <footer class="footer">
+      <ul class="social-list">
+          <li class="social-list__item">
+              <a class="social-list__link" href="https://instagram.com/staticpointband">
+                  <i class="fa-brands fa-instagram fa-2xl"></i></a>
+          </li>
+          <li class="social-list__item">
+              <a class="social-list__link" href="https://www.tiktok.com/@staticpointband/">
+                  <i class="fa-brands fa-tiktok fa-2xl"></i></a>
+          </li>
+          <li class="social-list__item">
+              <a class="social-list__link" href="https://open.spotify.com/artist/1VLZfWrlyLdlc8aErUTjs1?si=E6UwNmbBRlCvzAAMUtwdnQ">
+                  <i class="fa-brands fa-spotify fa-2xl"></i></a>
+          </li>
+          <li class="social-list__item">
+              <a class="social-list__link" href="https://music.apple.com/us/artist/static-point/1677957583">
+                  <i class="fa-brands fa-itunes-note fa-2xl"></i></a>
+          </li>
+          <li class="social-list__item">
+              <a class="social-list__link" href="https://youtube.com/@staticpointband">
+                  <i class="fa-brands fa-youtube fa-2xl"></i></a>
+          </li>
+          <li class="social-list__item">
+              <a class="social-list__link" href="https://staticpoint.bandcamp.com">
+                  <i class="fa-brands fa-bandcamp fa-2xl"></i></a>
+          </li>
+      </ul>
+  </footer>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+  </body>
+</html>
